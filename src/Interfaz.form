@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Interfaz">
   <grid id="27dc6" binding="rocketPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="19" y="22" width="782" height="589"/>
+      <xy x="19" y="22" width="1002" height="771"/>
     </constraints>
     <properties>
       <foreground color="-16777216"/>
@@ -322,6 +322,18 @@
           <gridbag weightx="1.0" weighty="0.0"/>
         </constraints>
       </hspacer>
+      <component id="f4422" class="javax.swing.JLabel" binding="Foto">
+        <constraints>
+          <grid row="11" column="4" row-span="6" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="11"/>
+          <horizontalTextPosition value="11"/>
+          <icon value="img/NoBG.png"/>
+          <text value=""/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

@@ -3,8 +3,10 @@ import Cars.Pickup;
 import Cars.Sedan;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import java.awt.*;
 import java.awt.event.*;
 import java.lang.reflect.Array;
 import java.util.Map;
@@ -30,6 +32,7 @@ public class Interfaz extends JFrame{
     private JButton editarButton;
     private JButton crearBtn;
     private JButton borrarButton;
+    private JLabel Foto;
 
     private Car selectedCar;
 
@@ -68,6 +71,26 @@ public class Interfaz extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateModels();
+            }
+        });
+        elegirFotoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                String Ruta = "";
+                JFileChooser jFileChooser = new JFileChooser();
+                FileNameExtensionFilter filtrado = new FileNameExtensionFilter("JPG, PNG & GIF","jpg", "png", "gif");
+                jFileChooser.setFileFilter(filtrado);
+
+                int respuesta = jFileChooser.showOpenDialog(jFileChooser);
+
+                if (respuesta == JFileChooser.APPROVE_OPTION) {
+                    Ruta = jFileChooser.getSelectedFile().getPath();
+
+                    Image mImagen = new ImageIcon(Ruta).getImage();
+                    ImageIcon mIcono = new ImageIcon(mImagen.getScaledInstance(340,170, Image.SCALE_SMOOTH));
+                    Foto.setIcon(mIcono);
+
+                }
             }
         });
     }
@@ -138,6 +161,8 @@ public class Interfaz extends JFrame{
 
         ModeloCB.setModel(model);
     }
+
+
 
 
 }
