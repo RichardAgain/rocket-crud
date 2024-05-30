@@ -2,7 +2,7 @@ package Cars;
 
 import java.util.ArrayList;
 
-public class Car {
+public abstract class Car {
 
     public String model;
     public String brand;
@@ -38,15 +38,21 @@ public class Car {
         };
     }
 
-    protected String getPrice(double discount) {
+    public String getPrice(double discount) {
         double yearDiscount = ((double) (2024 - year) / 200);
 
-        return String.valueOf(((price + price * 0.16) * (1 - yearDiscount)) * (1 - discount)) + "$";
+        return String.valueOf(((price + price * 0.16) * (1 - yearDiscount)) * (1 - discount)) + " $";
     }
 
-    protected String getPrice(int hours, double discount) {
-        return String.valueOf(price * 0.02 * hours * (1 - discount)) + "$/hora";
+    public String getPrice(int hours, double discount) {
+        return String.valueOf(price * 0.02 * hours * (1 - discount)) + " $/hora";
     }
+
+    public abstract String getPrice();
+
+    public abstract String getPrice(int days);
+
+    public abstract double getDiscount();
 
     public static class Owner {
 

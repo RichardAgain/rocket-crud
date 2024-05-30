@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55ecec13-c1c7-4fa3-a9c6-7cd84f29453e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cars/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cars/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cars/Pickup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cars/Pickup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cars/Sedan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cars/Sedan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interfaz.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaz.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,17 +2,24 @@ package Cars;
 
 public class Pickup extends Car {
 
-    double discount = 0.20;
+    public double discount = 0.20;
 
     public Pickup (Owner owner, String model, String brand, String plate, int year, String color, double price) {
         super(owner, model, brand, plate, year, color, price);
     }
 
+    @Override
     public String getPrice() {
         return super.getPrice(discount);
     }
 
+    @Override
     public String getPrice(int days) {
         return super.getPrice(days, discount);
+    }
+
+    @Override
+    public double getDiscount() {
+        return discount;
     }
 }
