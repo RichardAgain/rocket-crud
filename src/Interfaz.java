@@ -59,12 +59,12 @@ public class Interfaz extends JFrame{
         JSpinner.NumberEditor editor = new JSpinner.NumberEditor(diasSpinner, "#");
         diasSpinner.setEditor(editor);
 
-        Car.Owner owner = new Car.Owner(12029954, "Nicole", "Watterson", "0414-4569374", "213 ELmore");
+        Car.Owner owner = new Car.Owner(12029954, "Nicole", "Watterson", "0414-4569374", "213 Elmore");
         Car.Owner owner2 = new Car.Owner(30556338, "Richard", "Watterson", "0414-4300312", "Valencia");
-        Car.Owner owner3 = new Car.Owner(30506201, "Red", "Angry Bird", "0414-4249066", "Isla Pajaros");
-        Sedan corsa = new Sedan(owner, "Corolla", "Toyota","ASD123",2018, "#0f0f0f", 1000);
-        Pickup luv = new Pickup(owner2, "Explorer", "Ford","ASD123",2018, "#0f0f0f", 1000);
-        Sedan spark = new Sedan(owner3, "Mustang", "Ford","ASD123",2018, "#0f0f0f", 100000);
+        Car.Owner owner3 = new Car.Owner(30506201, "Red", "AngryBird", "0414-4249066", "Isla Pajaros");
+        Sedan corsa = new Sedan(owner, "Corolla", "Toyota","ASD123",2018, "#0f0f0f", 1234);
+        Pickup luv = new Pickup(owner2, "Explorer", "Ford","ASD123",2018, "#0f0f0f", 4394);
+        Sedan spark = new Sedan(owner3, "Mustang", "Ford","ASD123",2018, "#0f0f0f", 12000);
 
         Car.carList.add(corsa);
         Car.carList.add(luv);
@@ -101,6 +101,8 @@ public class Interfaz extends JFrame{
         });
 
 
+
+
         crearBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -127,6 +129,7 @@ public class Interfaz extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String message = validateFields() ? editCar() : "Faltan Validaciones";
                 JOptionPane.showMessageDialog(null, message);
+
             }
         });
         borrarButton.addActionListener(new ActionListener() {
@@ -140,6 +143,12 @@ public class Interfaz extends JFrame{
                     JOptionPane.showMessageDialog(null, "Nada que borrar");
                 }
 
+            }
+        });
+        precioTF.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                showCar();
             }
         });
     }
@@ -164,9 +173,9 @@ public class Interfaz extends JFrame{
                 matriculaTF.getText().matches("[A-Z0-9]{6}") &&
                 cedulaTF.getText().matches("[0-9]{7,8}") &&
                 (Integer.parseInt(AñoTF.getText()) >= 1900 &&
-                (Integer.parseInt(AñoTF.getText()) <= 2024 &&
-                (Double.parseDouble(precioTF.getText())) >= 1000 &&
-                (Double.parseDouble(precioTF.getText())) <= 30000 )));
+                (Integer.parseInt(AñoTF.getText()) <= 2024)));
+//                (Double.parseDouble(precioTF.getText())) >= 1000 &&
+//                (Double.parseDouble(precioTF.getText())) <= 30000 )));
 
     }
 
@@ -261,7 +270,9 @@ public class Interfaz extends JFrame{
         Car.carList.get(selectedCarIndex).plate = matriculaTF.getText();
         Car.carList.get(selectedCarIndex).year = Integer.parseInt(AñoTF.getText());
         Car.carList.get(selectedCarIndex).color = "color";
-        Car.carList.get(selectedCarIndex).price = 1000.00;
+        Car.carList.get(selectedCarIndex).price = Double.parseDouble(precioTF.getText());
+
+        selectedCar = Car.carList.get(selectedCarIndex);
 
         return "Validado Correctamente";
 
